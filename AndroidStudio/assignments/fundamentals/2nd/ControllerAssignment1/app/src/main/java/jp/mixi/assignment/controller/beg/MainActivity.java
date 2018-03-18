@@ -3,7 +3,9 @@ package jp.mixi.assignment.controller.beg;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
+import android.widget.Toast;
 
 /**
  * TODO: 課題1
@@ -17,6 +19,8 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Toast.makeText(this, "onCreate", Toast.LENGTH_LONG).show();
+        Log.i("TEST","onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -26,5 +30,40 @@ public class MainActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+
+    @Override
+    protected void onStart() {
+        Toast.makeText(this, "onStart", Toast.LENGTH_LONG).show();
+        Log.i("TEST","onStart");
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        Toast.makeText(this, "onResume", Toast.LENGTH_LONG).show();
+        Log.i("TEST","onResume");
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        Toast.makeText(this, "onPause", Toast.LENGTH_LONG).show();
+        Log.i("TEST","onPause");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Toast.makeText(this, "onStop", Toast.LENGTH_LONG).show();
+        Log.i("TEST","onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Toast.makeText(this, "onDestroy", Toast.LENGTH_LONG).show();
+        Log.i("TEST","onDestroy");
+        super.onDestroy();
     }
 }
